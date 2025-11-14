@@ -1,0 +1,78 @@
+/* 基本樣式重設 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* 計算機容器 */
+.calculator-container {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group label {
+    font-weight: 500;
+    margin-right: 0.5rem;
+    color: #555;
+}
+
+input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* 按鈕樣式 */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 結果顯示區域 */
+#result-display {
+    margin-top: 2rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}
+
+#result-display p {
+    margin: 0.5rem 0;
+}
