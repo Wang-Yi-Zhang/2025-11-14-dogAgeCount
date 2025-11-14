@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // --- 1. 原有的計算邏輯 (保持不變) ---
+    // --- 1. 計算邏輯 ---
     const calculateBtn = document.getElementById('calculate-btn');
     if (calculateBtn) {
         calculateBtn.addEventListener('click', function() {
@@ -45,14 +45,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const infoDiv = document.getElementById('reference-info');
 
     if (toggleBtn && infoDiv) {
-        toggleBtn.addEventListener('click', function(event) {
-            event.preventDefault(); 
+        toggleBtn.addEventListener('click', function() {
             
-            // 切換 'show' class 來顯示或隱藏
-            infoDiv.classList.toggle('show');
+            // 切換 'show' class
+            const isVisible = infoDiv.classList.toggle('show');
             
-            // *** 移除切換按鈕文字的程式碼 ***
-            // 按鈕將永遠顯示 '?'
+            // --- 更新 ARIA 屬性 ---
+            if (isVisible) {
+                // 如果內容可見
+                toggleBtn.setAttribute('aria-expanded', 'true');
+                toggleBtn.setAttribute('aria-label', '隱藏計算說明');
+            } else {
+                // 如果內容隱藏
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                toggleBtn.setAttribute('aria-label', '顯示計算說明');
+            }
         });
     }
 

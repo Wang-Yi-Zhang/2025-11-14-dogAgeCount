@@ -58,41 +58,41 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* --- 新增：按鈕群組 --- */
+/* --- 按鈕群組 --- */
 .button-group {
     display: flex;
-    justify-content: center; /* 讓按鈕組置中 */
-    align-items: center;     /* 垂直對齊按鈕 */
-    gap: 0.75rem;            /* 兩個按鈕之間的間距 */
-    margin-top: 1.5rem;      /* 與上方元素的間距 */
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
 
-/* --- 修改：切換按鈕樣式 (圓形 '?') --- */
+/* --- 調整 '?' 按鈕樣式 --- */
 #toggle-info-btn {
     /* 1. 尺寸與形狀 */
     display: inline-block;
-    width: 32px;  /* 設定固定寬度 */
-    height: 32px; /* 設定固定高度 */
-    border-radius: 50%; /* 關鍵：設定為圓形 */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     
     /* 2. 內容對齊 */
     font-size: 1.1rem;
     font-weight: bold;
-    line-height: 30px; /* 垂直置中 '?' (略小於高度以平衡邊框) */
-    text-align: center;  /* 水平置中 '?' */
+    line-height: 30px; 
+    text-align: center;
     
     /* 3. 外觀 */
     color: #666;
     background-color: #ffffff;
     border: 1px solid #ccc;
-    text-decoration: none;
     cursor: pointer;
     
     /* 4. 重設 & 過渡 */
-    margin-top: 0; /* 移除舊的 margin-top */
-    padding: 0;    /* 移除舊的 padding */
+    margin-top: 0;
+    padding: 0;
     transition: all 0.2s ease;
+    font-family: inherit; 
 }
 
 #toggle-info-btn:hover {
@@ -100,7 +100,7 @@ button:hover {
     color: #000;
 }
 
-/* 參考資料區域 (保持不變) */
+/* 參考資料區域 */
 #reference-info {
     display: none; 
     margin-top: 1.5rem;
@@ -115,7 +115,7 @@ button:hover {
 #reference-info p { margin: 0.5rem 0; }
 #reference-info.show { display: block; }
 
-/* 結果顯示区域 (保持不變) */
+/* 結果顯示區域 */
 #result-display {
     margin-top: 1.5rem;
     font-size: 1.15rem;

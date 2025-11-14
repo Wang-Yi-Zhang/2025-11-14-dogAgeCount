@@ -19,7 +19,13 @@
         
         <button id="calculate-btn">開始計算</button>
         
-        <a href="#" id="toggle-info-btn">?</a>
+        <button id="toggle-info-btn" 
+                    type="button" 
+                    aria-label="顯示計算說明" 
+                    aria-controls="reference-info" 
+                    aria-expanded="false">
+                ?
+        </button>
         
         <div class="reference" id="reference-info">
             <p>計算公式：human_age = 16 * ln(dog_age) + 31</p>
