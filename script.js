@@ -36,6 +36,7 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
     // 3. 計算 {human_age}
     // 公式: human_age = 16 * ln(dog_age) + 31
     // 注意: JavaScript 中的 Math.log() 就是自然對數 (ln)
+    // 參考來源：Wang, T., Ma, J., Hogan, A. N., Fong, S., Licon, K., Tsui, B., ... & Ideker, T. (2020). Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell systems, 11(2), 176-185.https://www.cell.com/cell-systems/fulltext/S2405-4712(20)30203-9
     let human_age_raw = 16 * Math.log(dogAgeYears) + 31;
 
     // *** 處理說明中提到的「年齡下限」 ***
