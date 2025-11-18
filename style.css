@@ -7,18 +7,35 @@ body, html {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    /* 調整背景色為柔和的米白色 */
+    background-color: #f8f8f8; 
 }
 
 /* 計算機容器 */
 .calculator-container {
     background-color: #ffffff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 3rem; /* 增加內邊距 */
+    border-radius: 16px; /* 圓角增大 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 陰影增強 */
     text-align: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
+}
+
+/* 標題美化 */
+.calculator-container h2 {
+    color: #4CAF50; /* 溫暖的綠色或深色 */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+/* 標題小腳印 */
+.calculator-container h2::before {
+    content: "🐾"; /* 使用腳印 Emoji */
+    margin-right: 10px;
+    font-size: 1.2em;
+    vertical-align: middle;
 }
 
 .input-group {
@@ -29,33 +46,41 @@ body, html {
 }
 
 .input-group label {
-    font-weight: 500;
-    margin-right: 0.5rem;
-    color: #555;
+    font-weight: 600; /* 字重增強 */
+    margin-right: 0.75rem;
+    color: #333;
 }
 
 input[type="date"] {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* 圓角增大 */
     font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
 /* 按鈕樣式 */
 button {
-    background-color: #007bff;
+    background-color: #007bff; /* 主要按鈕色 */
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: 1rem 2rem; /* 尺寸增大 */
+    border-radius: 10px; /* 圓角增大 */
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
 }
 
 button:hover {
     background-color: #0056b3;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* --- 按鈕群組 --- */
@@ -63,64 +88,78 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+    gap: 1rem; /* 間距略增 */
+    margin-top: 2rem;
 }
 
 
-/* --- 調整 '?' 按鈕樣式 --- */
+/* --- 調整 '?' 按鈕樣式 (維持簡潔感) --- */
 #toggle-info-btn {
     /* 1. 尺寸與形狀 */
-    display: inline-block;
-    width: 32px;
-    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* 尺寸增大 */
+    height: 40px;
     border-radius: 50%;
     
     /* 2. 內容對齊 */
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    line-height: 30px; 
-    text-align: center;
+    padding: 0; /* 重設 padding */
     
-    /* 3. 外觀 */
-    color: #666;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    cursor: pointer;
+    /* 3. 外觀 - 變成輔助按鈕風格 */
+    color: #6c757d;
+    background-color: #f0f0f0;
+    border: 1px solid #dee2e6;
     
-    /* 4. 重設 & 過渡 */
+    /* 4. 重設 */
     margin-top: 0;
-    padding: 0;
-    transition: all 0.2s ease;
-    font-family: inherit; 
+    box-shadow: none; /* 移除陰影 */
 }
 
 #toggle-info-btn:hover {
-    background-color: #f8f9fa;
-    color: #000;
+    background-color: #e2e6ea;
+    color: #495057;
+    box-shadow: none;
 }
 
 /* 參考資料區域 */
 #reference-info {
     display: none; 
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fef8f8; /* 淺紅色系，用於說明/警告 */
+    border: 1px solid #f0e0e0;
+    border-radius: 10px;
     text-align: left;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: #555;
 }
 #reference-info p { margin: 0.5rem 0; }
 #reference-info.show { display: block; }
 
-/* 結果顯示區域 */
+/* 結果顯示區域 (新增美化重點) */
 #result-display {
-    margin-top: 1.5rem;
-    font-size: 1.15rem;
-    line-height: 1.6;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    
+    /* 強調區塊樣式 */
+    background-color: #fff3e0; /* 柔和的淺黃色/橘色 */
+    border: 1px solid #ffcc80;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.1);
+    
+    font-size: 1.2rem;
+    line-height: 1.8;
     color: #333;
     font-weight: 500;
 }
-#result-display p { margin: 0.5rem 0; }
+
+/* 強調結果數字 */
+#result-display strong {
+    color: #ff9800; /* 強調數字的顏色 */
+    font-size: 1.3em; 
+    font-weight: 700;
+}

@@ -9,7 +9,7 @@
 <body>
 
     <div class="calculator-container">
-        <h2>🐶 妙麗歲數計算機</h2>
+        <h2>妙麗歲數計算機</h2>
         <p>請輸入狗狗的出生日期：</p>
         
         <div class="input-group">
@@ -17,15 +17,16 @@
             <input type="date" id="birthdate">
         </div>
         
-        <button id="calculate-btn">開始計算</button>
-        
-        <button id="toggle-info-btn" 
-                    type="button" 
-                    aria-label="顯示計算說明" 
-                    aria-controls="reference-info" 
-                    aria-expanded="false">
-                ?
-        </button>
+        <div class="button-group">
+            <button id="calculate-btn">開始計算</button>
+            <button id="toggle-info-btn" 
+                        type="button" 
+                        aria-label="顯示計算說明" 
+                        aria-controls="reference-info" 
+                        aria-expanded="false">
+                    ?
+            </button>
+        </div>
         
         <div class="reference" id="reference-info">
             <p>計算公式：human_age = 16 * ln(dog_age) + 31</p>
@@ -33,7 +34,7 @@
         </div>
         
         <div id="result-display">
-            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
